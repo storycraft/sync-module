@@ -80,9 +80,8 @@ export class ExampleModule extends BotModule {
         let text = e.Message.Text;
 
         if (msg.AttachmentList.length > 0) {
-            if (msg.Text.length < 1) return;
             text += '\n';
-        }
+        } else if (msg.Text.length < 1) return;
 
         for (let attachment of msg.AttachmentList) {
             text += ` - (${AttachmentType[attachment.Type]}): ${attachment.URL}\n`;

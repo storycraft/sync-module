@@ -47,10 +47,10 @@ class ExampleModule extends core_1.BotModule {
         let msg = e.Message;
         let text = e.Message.Text;
         if (msg.AttachmentList.length > 0) {
-            if (msg.Text.length < 1)
-                return;
             text += '\n';
         }
+        else if (msg.Text.length < 1)
+            return;
         for (let attachment of msg.AttachmentList) {
             text += ` - (${core_1.AttachmentType[attachment.Type]}): ${attachment.URL}\n`;
         }
