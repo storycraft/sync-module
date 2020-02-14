@@ -1,7 +1,7 @@
 {
-  "name": "${moduleName}-module",
+  "name": "sync-module",
   "version": "1.0.0",
-  "description": "write description here",
+  "description": "Chat sync module",
   "main": "dist/index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha -r ts-node/register ./tests/*.test.ts",
