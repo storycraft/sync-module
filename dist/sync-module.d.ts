@@ -1,6 +1,6 @@
 import { BotModule, DatabaseEntry, BotMessageEvent } from "@akaiv/core";
 import { RegistryManager } from "./registry-manager";
-export declare class ExampleModule extends BotModule {
+export declare class SyncModule extends BotModule {
     private registryManager;
     private channelMap;
     constructor({ syncEntry }: {

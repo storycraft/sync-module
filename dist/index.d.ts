@@ -1,1 +1,1 @@
-export { ExampleModule as default } from "./sync-module";
+export { SyncModule as default } from "./sync-module";

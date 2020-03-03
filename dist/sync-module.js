@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@akaiv/core");
 const module_command_1 = require("./module-command");
 const registry_manager_1 = require("./registry-manager");
-class ExampleModule extends core_1.BotModule {
+class SyncModule extends core_1.BotModule {
     constructor({ syncEntry }) {
         super();
         this.registryManager = new registry_manager_1.RegistryManager(syncEntry);
@@ -33,7 +33,7 @@ class ExampleModule extends core_1.BotModule {
         if (!this.channelMap.has(e.Message.Channel.IdentityId)) {
             this.channelMap.set(e.Message.Channel.IdentityId, e.Message.Channel);
         }
-        if (e.Message.Sender instanceof core_1.ClientUser) {
+        if (e.Message.Sender.IsClientUser) {
             return;
         }
         if (!(await this.registryManager.isConnected(e.Message.Channel))) {
@@ -57,5 +57,5 @@ class ExampleModule extends core_1.BotModule {
         await chan.sendText(`[${e.Message.Channel.Client.ClientName}] ${e.Message.Sender.Name}: ${text}`);
     }
 }
-exports.ExampleModule = ExampleModule;
+exports.SyncModule = SyncModule;
 //# sourceMappingURL=sync-module.js.map

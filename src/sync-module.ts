@@ -8,7 +8,7 @@ import { RegistryManager } from "./registry-manager";
  * Copyright (c) storycraft. Licensed under the MIT Licence.
  */
 
-export class ExampleModule extends BotModule {
+export class SyncModule extends BotModule {
 
     private registryManager: RegistryManager;
 
@@ -60,7 +60,7 @@ export class ExampleModule extends BotModule {
             this.channelMap.set(e.Message.Channel.IdentityId, e.Message.Channel);
         }
         
-        if (e.Message.Sender instanceof ClientUser) {
+        if (e.Message.Sender.IsClientUser) {
             return;
         }
 
